@@ -5,6 +5,10 @@ import FadeInSection from "./FadeInSection"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import Carousel from "react-bootstrap/Carousel"
 import ExternalLinks from "./ExternalLinks"
+import f1 from "../assets/f1.png"
+import spotify from "../assets/spotify.png"
+import fixit2 from "../assets/fixit2.png"
+import kaggle2 from "../assets/kaggle2.png"
 
 class Projects extends React.Component {
     constructor() {
@@ -24,51 +28,44 @@ class Projects extends React.Component {
         const spotlightProjects = {
             "EA F1 23 Dashboard": {
                 title: "F1 Dashboard",
-                desc:
-                    "A dashboard that connects to EA's F1 23 game and generates real-time analytics and recording so you can improve your skill.",
+                desc: "A dashboard that connects to EA's F1 23 game and generates real-time analytics and recording so you can improve your skill.",
                 techStack: "React.js, Go",
                 link: "https://github.com/Harsh-2420/f1-telemetry",
 
-                image: "/assets/f1.png",
+                image: f1,
             },
             Spotty: {
                 title: "Spotty",
-                desc:
-                    "A dashboard that connects to your Spotify account and displays detailed analytics about your listening history.",
+                desc: "A dashboard that connects to your Spotify account and displays detailed analytics about your listening history.",
                 techStack: "Python, MongoDB",
                 link: "https://github.com/Harsh-2420/spotify",
 
-                image: "/assets/spotify.png",
+                image: spotify,
             },
             Fixit: {
                 title: "Fixit",
-                desc:
-                    "Publication: Recommendation System implemented to help CS1 students improve in their courses.",
+                desc: "Publication: Recommendation System implemented to help CS1 students improve in their courses.",
                 techStack: "Python, Node.js, React.js, Machine-Learning",
-                open:
-                    "https://cssplice.github.io/LAS20/proc/SPLICE_2020_LS_paper_2.pdf",
+                open: "https://cssplice.github.io/LAS20/proc/SPLICE_2020_LS_paper_2.pdf",
 
-                image: "/assets/fixit2.png",
+                image: fixit2,
             },
             kaggle: {
                 title: "Kaggle Competitions",
-                desc:
-                    "A collection of kaggle competitions and datasets I have worked with. These include data alaytics and machine learning projects.",
+                desc: "A collection of kaggle competitions and datasets I have worked with. These include data alaytics and machine learning projects.",
                 techStack: "Python, Machine-Learning",
                 link: "https://github.com/Harsh-2420/kaggle",
 
-                image: "/assets/kaggle2.png",
+                image: kaggle2,
             },
         }
         const projects = {
             "Football Analytics": {
-                desc:
-                    "A dashboard displaying the latest leaderboards from leagues across Europe. There's also match predictions from ML algorithms.",
+                desc: "A dashboard displaying the latest leaderboards from leagues across Europe. There's also match predictions from ML algorithms.",
                 techStack: "React.js, Python",
-                link:
-                    "https://github.com/Harsh-2420/football-formula1-analytics",
+                link: "https://github.com/Harsh-2420/football-formula1-analytics",
 
-                image: "/assets/talltales.png",
+                image: kaggle2,
             },
         }
 
@@ -79,7 +76,7 @@ class Projects extends React.Component {
                 </div>
                 <Carousel>
                     {Object.keys(spotlightProjects).map((key, i) => (
-                        <Carousel.Item>
+                        <Carousel.Item key={i}>
                             <img
                                 className="d-block w-100"
                                 src={spotlightProjects[key]["image"]}
@@ -106,13 +103,13 @@ class Projects extends React.Component {
                                     <h3>{spotlightProjects[key]["title"]}</h3>
                                     <p>
                                         {spotlightProjects[key]["desc"]}
-                                        <p className="techStack">
+                                        <span className="techStack">
                                             {
                                                 spotlightProjects[key][
                                                     "techStack"
                                                 ]
                                             }
-                                        </p>
+                                        </span>
                                     </p>
                                     <ExternalLinks
                                         githubLink={

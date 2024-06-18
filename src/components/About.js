@@ -2,6 +2,7 @@ import React from "react"
 import "../styles/About.css"
 import FadeInSection from "./FadeInSection"
 import PetsIcon from "@material-ui/icons/Pets"
+import me3 from "../assets/me3.jpeg"
 
 class About extends React.Component {
     constructor() {
@@ -65,8 +66,11 @@ class About extends React.Component {
                             <ul className="tech-stack">
                                 {tech_stack.map(function (tech_item, i) {
                                     return (
-                                        <FadeInSection delay={`${i + 1}00ms`}>
-                                            <li>{tech_item}</li>
+                                        <FadeInSection
+                                            delay={`${i + 1}00ms`}
+                                            key={i}
+                                        >
+                                            <li key={i}>{tech_item}</li>
                                         </FadeInSection>
                                     )
                                 })}
@@ -76,7 +80,8 @@ class About extends React.Component {
                         <div className="about-image">
                             <img
                                 alt="Harsh Jhunjhunwala"
-                                src={"/assets/me3.jpeg"}
+                                // src={"/assets/me3.jpeg"}
+                                src={me3}
                             />
                         </div>
                     </div>

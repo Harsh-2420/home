@@ -127,13 +127,14 @@ const JobList = () => {
             >
                 {Object.keys(experienceItems).map((key, i) => (
                     <Tab
+                        key={i}
                         label={isHorizontal ? `0${i}.` : key}
                         {...a11yProps(i)}
                     />
                 ))}
             </Tabs>
             {Object.keys(experienceItems).map((key, i) => (
-                <TabPanel value={value} index={i}>
+                <TabPanel value={value} index={i} key={key}>
                     <span className="joblist-job-title">
                         {experienceItems[key]["jobTitle"] + " "}
                     </span>
