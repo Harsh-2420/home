@@ -101,9 +101,18 @@ class Projects extends React.Component {
                             <div className="caption-bg">
                                 <Carousel.Caption>
                                     <h3>{spotlightProjects[key]["title"]}</h3>
+                                    <br />
                                     <p>
                                         {spotlightProjects[key]["desc"]}
-                                        <span className="techStack">
+                                        <span
+                                            className="techStack"
+                                            style={{
+                                                color: "#64ffda",
+                                                display: "block",
+                                                marginTop: "1em",
+                                                fontWeight: "bold",
+                                            }}
+                                        >
                                             {
                                                 spotlightProjects[key][
                                                     "techStack"
